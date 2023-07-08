@@ -1,0 +1,29 @@
+.container {
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.stat {
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid rgba(27, 31, 39, 0.1);
+  padding: 1rem;
+  svg {
+    width: 36px;
+    margin-bottom: 12px;
+  }
+
+  &__ttl {
+    font-size: 17px;
+    margin-bottom: 14px;
+  }
+
+  &__txt {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}

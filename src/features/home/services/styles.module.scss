@@ -1,0 +1,96 @@
+.services {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  &__ttl {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 1rem;
+  }
+
+  &__txt {
+    color: rgba(27, 31, 39, 0.5);
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 5rem;
+  }
+}
+
+.service {
+  border-radius: 12px;
+  border: 1px solid rgba(27, 31, 39, 0.05);
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 4.5rem;
+  align-items: flex-end;
+  grid-template: "a b" / 1fr 1fr;
+  min-height: 480px;
+
+  .content {
+    color: rgba(27, 31, 39, 0.5);
+    padding: 2.5rem;
+    grid-area: a;
+    padding-right: 1rem;
+    margin-bottom: auto;
+  }
+
+  &__ttl {
+    font-weight: 600;
+    color: #1b1f27;
+    font-size: 32px;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  &__txt {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    li {
+      border-radius: 12px;
+      background: rgba(60, 186, 103, 0.05);
+      margin-bottom: 12px;
+      padding: 14px 10px;
+      font-size: 15px;
+      display: flex;
+    }
+    li::before {
+      content: url(../../../assets/vectors/listIcon.svg);
+      margin-right: 10px;
+      display: block;
+      background-size: cover;
+    }
+  }
+
+  &__btn {
+    background: var(--gradient-green);
+    color: #fff;
+    border: none;
+    padding: 1rem 2.8rem;
+    border-radius: 6px;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100%;
+    grid-area: b;
+    padding-top: 2rem;
+  }
+
+  &:nth-of-type(even) {
+    grid-template: "b a" / 1fr 1fr;
+
+    .content {
+        padding-right: 2.5rem;
+        padding-left: 1rem;
+    }
+  }
+}
