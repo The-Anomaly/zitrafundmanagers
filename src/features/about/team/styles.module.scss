@@ -1,0 +1,55 @@
+.teamBg {
+  background: #f4f4f4;
+}
+.team {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+
+  &__ttl {
+    font-weight: 600;
+    color: #1b1f27;
+    font-size: 32px;
+    margin: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  &__txt {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: rgba(27, 31, 39, 0.5);
+  }
+}
+
+.members {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+.member {
+  border-radius: 12px;
+  background: #fff;
+  padding: 1.5rem;
+}
+.photo {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.role {
+  color: rgba(3, 163, 0, 0.9);
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.bio {
+  color: #1b1f2780;
+  font-size: 15px;
+  line-height: 1.8;
+}

@@ -19,8 +19,26 @@ import stock6 from "./stock6.png";
 import post1 from "./post1.png";
 import post2 from "./post2.png";
 import post3 from "./post3.png";
+import aboutImg from "./aboutImg.png";
+import director1 from "./director1.png";
+import director2 from "./director2.png";
+import director3 from "./director3.png";
+import director4 from "./director4.png";
+import director5 from "./director5.png";
+import director6 from "./director6.png";
+import director7 from "./director7.png";
+import director8 from "./director8.png";
 
 export {
+  director1,
+  director2,
+  director3,
+  director4,
+  director5,
+  director6,
+  director7,
+  director8,
+  aboutImg,
   post1,
   post2,
   post3,

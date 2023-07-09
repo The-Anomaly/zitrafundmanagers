@@ -1,0 +1,47 @@
+.heroBg {
+  background: #fff;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 10rem;
+  padding-bottom: 2rem;
+}
+.content {
+  margin-top: 4rem;
+}
+.ttl {
+  font-size: 68px;
+  max-width: 600px;
+  margin-bottom: 1.2rem;
+  position: relative;
+
+  svg {
+    margin-bottom: 30px;
+    margin-left: -8px;
+  }
+}
+.txt {
+  font-size: 15px;
+  color: rgba(27, 31, 39, 0.5);
+  line-height: 1.8;
+  margin-bottom: 10px;
+  max-width: 550px;
+
+  a {
+  }
+
+  br {
+    margin-bottom: 1rem;
+  }
+}
+.img {
+  width: 100%;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: -10%;
+  background: url(../../../assets/vectors/aboutEllipse.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
