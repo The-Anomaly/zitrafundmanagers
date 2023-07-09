@@ -6,8 +6,12 @@ import { ReactComponent as TwitterIcon } from "./twitterIcon.svg";
 import { ReactComponent as FacebookIcon } from "./facebookIcon.svg";
 import { ReactComponent as LinkedinIcon } from "./linkedinIcon.svg";
 import { ReactComponent as AboutArrow } from "./aboutArrow.svg";
+import { ReactComponent as PlusIcon } from "./plusIcon.svg";
+import { ReactComponent as MinusIcon } from "./minusIcon.svg";
 
 export {
+  PlusIcon,
+  MinusIcon,
   AboutArrow,
   AssetManagementIcon,
   LicenseIcon,
