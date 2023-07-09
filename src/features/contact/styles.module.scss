@@ -1,0 +1,112 @@
+.container {
+  padding-top: 10rem;
+  padding-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fff;
+  align-items: center;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contact {
+  padding: 4rem 13%;
+}
+.ttl {
+  font-size: 45px;
+  margin-bottom: 1.5rem;
+}
+.txt {
+  font-size: 17px;
+  margin-bottom: 3rem;
+  color: #667085;
+
+  a {
+      color: inherit;
+  }
+}
+
+.form {
+}
+.inputWrap {
+  margin-bottom: 1.5rem;
+
+  label {
+    display: block;
+    color: #374151;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  input,
+  textarea {
+    display: block;
+    border-radius: 6px;
+    border: 1px solid var(--gray-300, #d1d5db);
+    background: var(--white, #fff);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    padding: 7px 12px;
+  }
+
+  textarea {
+    resize: none;
+    height: 120px;
+    font-size: 14px;
+  }
+
+  p {
+  }
+}
+
+.selectWrap {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.25rem;
+}
+
+/* select box */
+.select [class*="formSelect__indicator-separator"] {
+  display: none;
+}
+.select [class*="formSelect__control"] {
+  min-height: unset;
+  width: 100%;
+  border: 1px solid var(--gray-300, #d1d5db);
+  background: transparent;
+  height: 100%;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+}
+.select [class*="formSelect__control--is-focused"] {
+  /* background: transparent; */
+  border-color: #e5e5e5 !important;
+  box-shadow: none;
+}
+.select [class*="formSelect__input-container"] {
+  height: 100%;
+  margin: 0;
+}
+.select [class*="formSelect__value-container"] {
+  padding: 0 0 0 1rem;
+}
+.select [class*="formSelect__placeholder"] {
+  color: #4e5d78;
+  opacity: 0.8;
+  font-size: 14px;
+}
+.btn {
+  border-radius: 8px;
+  border: 1px solid #03a300;
+  background: #03a300;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  color: #fff;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  margin-top: 10px;
+}

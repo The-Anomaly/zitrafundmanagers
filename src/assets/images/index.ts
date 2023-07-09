@@ -29,8 +29,11 @@ import director6 from "./director6.png";
 import director7 from "./director7.png";
 import director8 from "./director8.png";
 import avatarGroup from "./avatarGroup.png";
+import contactImg from "./contactImg.png";
 
-export {avatarGroup,
+export {
+  avatarGroup,
+  contactImg,
   director1,
   director2,
   director3,

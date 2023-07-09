@@ -1,5 +1,5 @@
 import { Layout } from "layout";
-import { About, FAQS, Home } from "pages";
+import { About, Contact, FAQS, Home } from "pages";
 import { PathRouteProps } from "react-router-dom";
 import { Routes } from "./routes";
 
@@ -46,6 +46,14 @@ export const RouteBuilder: RouteBuilderItem[] = [
     Element: FAQS,
     props: {
       active: "faqs",
+    },
+  },
+  {
+    path: Routes.contact,
+    Layout: Layout,
+    Element: Contact,
+    props: {
+      active: "contact",
     },
   },
 ];

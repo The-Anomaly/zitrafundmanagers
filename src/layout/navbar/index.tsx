@@ -52,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ active, apply }) => {
     {
       text: "Contact us",
       state: "contact",
-      link: Routes.home,
+      link: Routes.contact,
     },
   ];
   return (
