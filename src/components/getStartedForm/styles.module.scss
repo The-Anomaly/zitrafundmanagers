@@ -1,36 +1,41 @@
 .container {
-  padding-top: 10rem;
-  padding-bottom: 3rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: #fff;
-  align-items: center;
+  background: #1b1f2775;
+  position: fixed;
+  z-index: 10;
+  height: 100vh;
 }
-.img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.contact {
-  padding: 4rem 13%;
-}
-.ttl {
-  font-size: 45px;
-  margin-bottom: 1.5rem;
-}
-.txt {
-  font-size: 17px;
-  margin-bottom: 3rem;
-  color: #667085;
 
-  a {
-    color: inherit;
+.content {
+  width: 50%;
+  margin-left: auto;
+  background: #fff;
+  padding: 1.5rem;
+  min-width: 600px;
+  overflow: auto;
+  height: 100%;
+  padding-bottom: 0;
+
+  &::-webkit-scrollbar {
+    width: 0;
   }
 }
-
-.form {
+.close {
+  position: absolute;
+  right: 1.5rem;
 }
-
+.ttl {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 1.8rem;
+}
+.txt {
+  color: rgba(27, 31, 39, 0.5);
+  margin-bottom: 1.5rem;
+}
+.form {
+  width: 60%;
+  min-width: 350px;
+}
 .inputWrap {
   margin-bottom: 1.5rem;
 
@@ -110,4 +115,60 @@
   padding: 12px;
   font-size: 15px;
   margin-top: 10px;
+}
+
+.btnSec {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem 1.5rem;
+  margin-left: -1.5rem;
+  width: calc(100% + 3rem);
+  margin-top: 5rem;
+
+  button {
+    font-weight: 600;
+    padding: 9px 18px;
+    margin-left: 1rem;
+    border-radius: 6px;
+  }
+
+  .cancel {
+    border: 1px solid var(--gray-300, #d1d5db);
+    background: var(--bg-color-100, #fff);
+
+    /* shadow/sm */
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .submit {
+    background: var(
+      --gradient,
+      linear-gradient(129deg, #013f00 0%, #48d911 50.95%, #5aff15 100%)
+    );
+
+    /* shadow/sm */
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    color: #fff;
+    border: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    width: 100%;
+    min-width: unset;
+    padding: 1.5rem 1rem 0;
+  }
+  .form {
+    width: 100%;
+    max-width: 370px;
+  }
+  .ttl {
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+  .close {
+    right: 1rem;
+  }
 }

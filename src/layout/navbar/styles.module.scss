@@ -5,10 +5,10 @@
   position: fixed;
   z-index: 5;
   width: 100%;
+  transition: 0.3s;
 
   &.light {
-    
-  background: #fff;
+    background: #fff;
   }
 }
 .header {
@@ -89,9 +89,6 @@ a.activeItem {
   .logo {
     width: 100px;
   }
-  .navlist li {
-    margin: 0 10px;
-  }
 }
 @media screen and (max-width: 800px) {
   .hamburger * {
@@ -112,10 +109,20 @@ a.activeItem {
     right: 1rem;
   }
   .hamburger div {
-    background: #1b1f27;
+    background: #fff;
     height: 2px;
     width: 100%;
     border-radius: 4px;
+  }
+  .dark {
+    .hamburger div {
+      background: #fff;
+    }
+  }
+  .light {
+    .hamburger div {
+      background: #1b1f27;
+    }
   }
   .hamburger div:last-of-type {
     width: 50%;
@@ -140,25 +147,44 @@ a.activeItem {
   .logo {
     width: 80px;
   }
-  .navlist {
-    flex-direction: column;
-    align-items: flex-start;
+  button.navBtn {
+    border-radius: 6px;
+    background: var(
+      --gradient,
+      linear-gradient(129deg, #013f00 0%, #48d911 50.95%, #5aff15 100%)
+    );
+    color: #fff;
+    width: fit-content;
+    margin-top: 1.5rem;
   }
-  .navlist li {
-    margin: 1rem 0;
+  .nav {
+    color: #1b1f27 !important;
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    margin-top: 2rem;
+    gap: 1.5rem;
+    font-weight: 500;
+
+    a {
+      margin-left: 0;
+    }
   }
   .openMenu {
     height: 100vh;
-  }
-  .nav {
-    margin-top: 1rem;
-  }
-  button.navBtn {
-    width: 100%;
-    margin-bottom: 2rem;
-    margin-top: 4rem;
-  }
-  .navBg {
-    background: var(--bg-color-004);
+    width: 90%;
+    right: 0;
+    max-width: 500px;
+    background: #fff;
+
+    .hamburger {
+      div {
+        background: #1b1f27;
+      }
+    }
+
+    .header {
+      padding: 1.5rem;
+    }
   }
 }

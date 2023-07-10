@@ -27,3 +27,24 @@
     font-weight: 600;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .stats {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .stat {
+    svg {
+      width: 32px;
+    }
+
+    &__ttl {
+      font-size: 15px;
+    }
+
+    &__txt {
+      font-size: 18px;
+    }
+  }
+}

@@ -8,8 +8,10 @@ import { ReactComponent as LinkedinIcon } from "./linkedinIcon.svg";
 import { ReactComponent as AboutArrow } from "./aboutArrow.svg";
 import { ReactComponent as PlusIcon } from "./plusIcon.svg";
 import { ReactComponent as MinusIcon } from "./minusIcon.svg";
+import { ReactComponent as CloseIcon } from "./closeIcon.svg";
 
 export {
+  CloseIcon,
   PlusIcon,
   MinusIcon,
   AboutArrow,

@@ -26,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ active, apply }) => {
   window.onresize = screenSizeUpdate;
 
   const handleScroll = () => {
-    if (window.scrollY > 80 && window.innerWidth > 800) {
+    if (window.scrollY > 80) {
       setScrollNav(true);
     } else {
       setScrollNav(false);
@@ -75,7 +75,7 @@ const Navbar: React.FC<NavbarProps> = ({ active, apply }) => {
             <img
               className={styles.logo}
               src={
-                scrollNav
+                scrollNav || showNav
                   ? logoColored
                   : active === "home"
                   ? logoWhite

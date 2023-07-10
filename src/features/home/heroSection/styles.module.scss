@@ -29,6 +29,10 @@
   margin-bottom: 1.2rem;
   position: relative;
 
+  span {
+    position: relative;
+  }
+
   span::after {
     content: "";
     display: block;
@@ -37,7 +41,7 @@
     width: 140px;
     height: 55px;
     background-size: cover;
-    right: -28px;
+    right: -35px;
     bottom: -28px;
   }
 }
@@ -57,4 +61,40 @@
   font-size: 16px;
   letter-spacing: 0.3px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .heroBg {
+    background-position: center;
+
+    .ttl {
+      font-size: 50px;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      
+      span::after {
+        width: 100px;
+        height: 35px;
+        right: 0;
+        left: -4px;
+        bottom: -17px;
+      }
+    }
+  }
+
+  .txt {
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    margin-bottom: 2rem;
+  }
+  .btn {
+    margin: auto;
+    display: block;
+    font-size: 14px;
+    padding: 1rem 2.5rem;
+  }
 }
