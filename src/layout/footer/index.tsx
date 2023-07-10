@@ -8,8 +8,20 @@ import {
   TwitterIcon,
   logoWhite,
 } from "assets";
+import { useEffect, useState } from "react";
 
-const Footer = () => {
+interface FooterProps {
+  submit: (email: string) => void;
+  clear: boolean;
+}
+
+const Footer: React.FC<FooterProps> = ({ submit, clear }) => {
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    setEmail("");
+  }, [clear]);
+
   return (
     <>
       <section className={styles.footerBg}>
@@ -21,7 +33,7 @@ const Footer = () => {
                 <Link className={styles.item} to={Routes.home}>
                   Home
                 </Link>
-                <Link className={styles.item} to={""}>
+                <Link className={styles.item} to={`${Routes.home}#services`}>
                   Product & Services
                 </Link>
                 <Link className={styles.item} to={Routes.about}>
@@ -63,8 +75,17 @@ const Footer = () => {
             <div className={styles.subscribe}>
               <p className={styles.ttl}>Subscribe</p>
               <div className={styles.inputWrap}>
-                <input role="button" type="email" placeholder="Email address" />
-                <SendIcon />
+                <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  role="button"
+                  type="email"
+                  placeholder="Email address"
+                />
+                <SendIcon
+                  onClick={() => (email === "" ? {} : submit(email))}
+                  role="button"
+                />
               </div>
               <p className={styles.subscribe__txt}>
                 Hello, we are ABC. trying to make an effort to put the right
@@ -74,19 +95,31 @@ const Footer = () => {
           </div>
           <div className={styles.sec2}>
             <img src={logoWhite} alt="zitra logo" />
-            <div className={styles.otherLinks}>
+            {/* <div className={styles.otherLinks}>
               <a>Terms</a>
               <a>Privacy</a>
               <a>Cookies</a>
-            </div>
+            </div> */}
             <div className={styles.socials}>
-              <a>
+              <a
+                href="https://www.linkedin.com/company/zitra-investments/"
+                target={"_blank"}
+                rel="noreferrer"
+              >
                 <LinkedinIcon />
               </a>
-              <a>
+              <a
+                href="https://www.facebook.com/zitrainvestments"
+                target={"_blank"}
+                rel="noreferrer"
+              >
                 <FacebookIcon />
               </a>
-              <a>
+              <a
+                href="https://twitter.com/zitrainvestment?s=11&t=EljUfIs4lTDFZcbYOdhdLA"
+                target={"_blank"}
+                rel="noreferrer"
+              >
                 <TwitterIcon />
               </a>
             </div>

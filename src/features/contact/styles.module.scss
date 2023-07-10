@@ -111,7 +111,11 @@
   font-size: 15px;
   margin-top: 10px;
 }
-
+.errorMessage {
+  color: red;
+  font-size: 11px;
+  margin-top: 8px;
+}
 @media screen and (max-width: 1200px) {
   .container {
     grid-template-columns: 0.8fr 1fr;

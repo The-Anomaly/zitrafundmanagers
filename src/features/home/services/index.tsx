@@ -41,7 +41,11 @@ const Service: React.FC<ServiceProps> = ({
   );
 };
 
-const Services = () => {
+interface ServicesProps {
+  getStarted: () => void;
+}
+
+const Services: React.FC<ServicesProps> = ({ getStarted }) => {
   const serviceList: ServiceData[] = [
     {
       title: "Private Wealth Accounts",
@@ -155,7 +159,7 @@ const Services = () => {
   ];
   return (
     <>
-      <section className={`container ${styles.services}`}>
+      <section id="services" className={`container ${styles.services}`}>
         <h3 className={styles.services__ttl}>Our Products & Services</h3>
         <p className={styles.services__txt}>
           Zitra Private Wealth is designed to help our clients build and manage
@@ -163,7 +167,7 @@ const Services = () => {
         </p>
         <div>
           {serviceList.map((service, index) => (
-            <Service getStarted={() => {}} {...service} key={index} />
+            <Service getStarted={getStarted} {...service} key={index} />
           ))}
         </div>
       </section>

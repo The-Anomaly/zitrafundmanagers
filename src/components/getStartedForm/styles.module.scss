@@ -153,16 +153,22 @@
     border: none;
   }
 }
+.errorMessage {
+  color: red;
+  font-size: 11px;
+  margin-top: 8px;
+}
 
 @media screen and (max-width: 800px) {
   .content {
-    width: 100%;
+    width: 90%;
     min-width: unset;
     padding: 1.5rem 1rem 0;
   }
   .form {
     width: 100%;
     max-width: 370px;
+    min-width: unset;
   }
   .ttl {
     font-size: 24px;

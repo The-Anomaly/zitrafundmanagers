@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { RouteBuilder } from ".";
+import { GetStartedForm } from "pages";
 
 /**
  * MAIN ROUTER COMPONENT
@@ -14,9 +15,13 @@ import { RouteBuilder } from ".";
  */
 
 const MainRouter: React.FC = () => {
+  const { search } = useLocation();
+
+  console.log(search);
   return (
     <>
       <ScrollToTop />
+      {search.includes("getstarted") && <GetStartedForm />}
       <Routes>
         {RouteBuilder?.length > 0 &&
           RouteBuilder.map((item, idx) => {

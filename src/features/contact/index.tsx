@@ -6,6 +6,7 @@ import * as yup from "yup";
 import countryCodes from "utils/countryCodes.json";
 import { optionType, optionTypeSchema } from "utils";
 import Select from "react-select";
+import { useEffect } from "react";
 
 export interface ContactData {
   name: string;
@@ -37,7 +38,12 @@ const schema = yup
   })
   .required();
 
-const ContactUI = () => {
+interface ContactProps {
+  submit: (data: ContactData) => void;
+  clear: boolean;
+}
+
+const ContactUI: React.FC<ContactProps> = ({ submit, clear }) => {
   const {
     register,
     handleSubmit,
@@ -49,6 +55,14 @@ const ContactUI = () => {
     resolver: yupResolver(schema),
     defaultValues: initialValues,
   });
+
+  useEffect(() => {
+    reset();
+  }, [clear]);
+
+  const onSubmit: SubmitHandler<ContactData> = (data) => {
+    submit(data);
+  };
 
   return (
     <>
@@ -98,7 +112,7 @@ const ContactUI = () => {
             </div>
             <div className={`${styles.inputWrap}`}>
               <label>Phone number</label>
-              <div className={styles.selectWrap} >
+              <div className={styles.selectWrap}>
                 <Select
                   onChange={(x: any) => setValue("countryCode", x)}
                   className={`${styles.select}`}
@@ -120,11 +134,9 @@ const ContactUI = () => {
                   })}
                 />
               </div>
-              {!watch("countryCode").value &&
-              errors.countryCode?.value?.message ? (
-                <p className={styles.errorMessage}>
-                  {errors.countryCode.value?.message}
-                </p>
+
+              {errors.number?.message ? (
+                <p className={styles.errorMessage}>{errors.number?.message}</p>
               ) : (
                 ""
               )}
@@ -143,7 +155,9 @@ const ContactUI = () => {
                 ""
               )}
             </div>
-            <button className={styles.btn} >Send message</button>
+            <button onClick={handleSubmit(onSubmit)} className={styles.btn}>
+              Send message
+            </button>
           </form>
         </div>
       </section>

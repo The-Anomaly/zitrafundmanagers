@@ -1,0 +1,59 @@
+.dialog {
+  position: fixed;
+  width: 100vw;
+  z-index: 15;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 2rem;
+}
+.body {
+  background: #ffffff;
+  width: 90%;
+  font-family: "Euclid";
+  padding: 1.2rem;
+  border-radius: 8px;
+  max-width: 380px;
+  min-height: 80px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 2rem;
+  z-index: 15;
+}
+.ttl {
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  width: calc(100% - 36px);
+}
+.txt {
+  color: #989fb1;
+  line-height: 1.5;
+}
+.closeBtn {
+  display: block;
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  margin: 0;
+  cursor: pointer;
+}
+.closeBtn path {
+  stroke: #ff552b;
+}
+.success {
+  box-shadow: 0 4px 9px rgb(3 163 0 / 12%);
+}
+.failure {
+  box-shadow: 0 4px 9px rgb(255 85 43 / 8%);
+}
+.success .ttl {
+  color: var(--primary-green);
+}
+.failure .ttl {
+  color: #ff552b;
+}

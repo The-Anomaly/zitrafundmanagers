@@ -6,73 +6,54 @@ import * as yup from "yup";
 import Select from "react-select";
 import countryCodes from "utils/countryCodes.json";
 import { CloseIcon } from "assets";
-
-const serviceOptions: optionType[] = [
-  {
-    label: "Private Wealth Accounts",
-    value: "Private Wealth Accounts",
-  },
-  {
-    label: "Fixed Income Notes",
-    value: "Fixed Income Notes",
-  },
-  {
-    label: "Mutual Funds",
-    value: "Mutual Funds",
-  },
-  {
-    label: "Foreign Currency Investments",
-    value: "Foreign Currency Investments",
-  },
-  {
-    label: "Zitra Alternative Investments",
-    value: "Zitra Alternative Investments",
-  },
-  {
-    label: "Ethical Investments",
-    value: "Ethical Investments",
-  },
-];
+import { useSearchParams } from "react-router-dom";
+import { locationOptions, serviceOptions } from "utils/options";
+import { useEffect } from "react";
 
 export interface GetStartedData {
-  name: string;
+  firstName: string;
+  lastName: string;
+  location: optionType;
   countryCode: optionType;
   number: string;
-  message: string | undefined;
+  email: string;
   service: optionType;
-  file: any;
 }
 
 const initialValues: GetStartedData = {
-  name: "",
+  firstName: "",
+  lastName: "",
   countryCode: { label: "+234", value: "+234" },
   number: "",
-  message: "",
+  email: "",
   service: { label: "", value: "" },
-  file: undefined,
+  location: { label: "", value: "" },
 };
 
 const schema = yup
   .object({
-    name: yup.string().required("Required"),
+    firstName: yup.string().required("Required"),
+    lastName: yup.string().required("Required"),
+    email: yup.string().email("Enter a valid email").required("Required"),
     countryCode: optionTypeSchema,
+    location: optionTypeSchema,
     number: yup
       .string()
       .required("Required")
       .min(8, "Enter a valid phone number")
       .matches(/^[0-9]+$/, "Phone number can only contain numbers"),
-    file: yup.mixed(),
     service: optionTypeSchema,
-    message: yup.string(),
   })
   .required();
 
-export interface ModalProps {
-  show: Boolean;
-  close: () => void;
+interface GetStartedProps {
+  submit: (data: GetStartedData) => void;
+  clear: boolean;
 }
 
-const GetStartedFormUI: React.FC<ModalProps> = ({ show, close }) => {
+const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const {
     register,
     handleSubmit,
@@ -85,9 +66,22 @@ const GetStartedFormUI: React.FC<ModalProps> = ({ show, close }) => {
     defaultValues: initialValues,
   });
 
+  useEffect(() => {
+    reset();
+  }, [clear]);
+
+  const close = () => {
+    searchParams.delete("getstarted");
+    setSearchParams(searchParams);
+  };
+
   const cancel = () => {
     reset();
     close();
+  };
+
+  const onSubmit: SubmitHandler<GetStartedData> = (data) => {
+    submit(data);
   };
 
   return (
@@ -108,16 +102,50 @@ const GetStartedFormUI: React.FC<ModalProps> = ({ show, close }) => {
 
           <form className={styles.form}>
             <div className={`${styles.inputWrap}`}>
-              <label>Full name</label>
+              <label>First name</label>
               <input
                 type={"text"}
-                placeholder="your name"
-                {...register("name", {
+                placeholder="your first name"
+                {...register("firstName", {
                   required: true,
                 })}
               />
-              {errors.name?.message ? (
-                <p className={styles.errorMessage}>{errors.name?.message}</p>
+              {errors.firstName?.message ? (
+                <p className={styles.errorMessage}>
+                  {errors.firstName?.message}
+                </p>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className={`${styles.inputWrap}`}>
+              <label>Last name</label>
+              <input
+                type={"text"}
+                placeholder="your last name"
+                {...register("lastName", {
+                  required: true,
+                })}
+              />
+              {errors.lastName?.message ? (
+                <p className={styles.errorMessage}>
+                  {errors.lastName?.message}
+                </p>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className={`${styles.inputWrap}`}>
+              <label>Email</label>
+              <input
+                type={"email"}
+                placeholder="your email"
+                {...register("email", {
+                  required: true,
+                })}
+              />
+              {errors.email?.message ? (
+                <p className={styles.errorMessage}>{errors.email?.message}</p>
               ) : (
                 ""
               )}
@@ -146,10 +174,25 @@ const GetStartedFormUI: React.FC<ModalProps> = ({ show, close }) => {
                   })}
                 />
               </div>
-              {!watch("countryCode").value &&
-              errors.countryCode?.value?.message ? (
+              {errors.number?.message ? (
+                <p className={styles.errorMessage}>{errors.number?.message}</p>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className={`${styles.inputWrap}`}>
+              <label>Location</label>
+              <Select
+                onChange={(x: any) => setValue("location", x)}
+                className={`${styles.select}`}
+                classNamePrefix="formSelect"
+                name={"location"}
+                options={locationOptions}
+                value={watch("location").value ? watch("location") : null}
+              />
+              {errors.location?.value?.message ? (
                 <p className={styles.errorMessage}>
-                  {errors.countryCode.value?.message}
+                  {errors.location?.value?.message}
                 </p>
               ) : (
                 ""
@@ -165,22 +208,10 @@ const GetStartedFormUI: React.FC<ModalProps> = ({ show, close }) => {
                 options={serviceOptions}
                 value={watch("service").value ? watch("service") : null}
               />
-              {errors.service?.message ? (
-                <p className={styles.errorMessage}>{errors.service?.message}</p>
-              ) : (
-                ""
-              )}
-            </div>
-            <div className={`${styles.inputWrap}`}>
-              <label>How can we help?</label>
-              <textarea
-                placeholder="Give a brief description"
-                {...register("message", {
-                  required: true,
-                })}
-              />
-              {errors.message?.message ? (
-                <p className={styles.errorMessage}>{errors.message?.message}</p>
+              {errors.service?.value?.message ? (
+                <p className={styles.errorMessage}>
+                  {errors.service?.value?.message}
+                </p>
               ) : (
                 ""
               )}
@@ -190,7 +221,9 @@ const GetStartedFormUI: React.FC<ModalProps> = ({ show, close }) => {
             <button onClick={cancel} className={styles.cancel}>
               Cancel
             </button>
-            <button className={styles.submit}>Submit</button>
+            <button onClick={handleSubmit(onSubmit)} className={styles.submit}>
+              Submit
+            </button>
           </div>
         </section>
       </aside>

@@ -4,13 +4,17 @@ import { NewsFeed } from "./newsFeed";
 import { Services } from "./services";
 import { SocialProof } from "components";
 
-const HomeUI = () => {
+interface HomeProps {
+  apply: () => void;
+}
+
+const HomeUI: React.FC<HomeProps> = ({ apply }) => {
   return (
     <>
-      <HeroSection />
+      <HeroSection apply={apply} />
       <SocialProof />
       <Brands />
-      <Services />
+      <Services getStarted={apply} />
       <NewsFeed />
     </>
   );

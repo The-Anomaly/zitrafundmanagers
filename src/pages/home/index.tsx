@@ -1,11 +1,16 @@
 import { HomeUI } from "features";
-import { GetStartedForm } from "pages";
+import { useSearchParams } from "react-router-dom";
 
 const Home = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const apply = () => {
+    setSearchParams({ getstarted: "true" });
+  };
+
   return (
     <>
-      {/* <GetStartedForm /> */}
-      <HomeUI />
+      <HomeUI apply={apply} />
     </>
   );
 };

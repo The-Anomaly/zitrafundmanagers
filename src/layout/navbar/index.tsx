@@ -55,6 +55,8 @@ const Navbar: React.FC<NavbarProps> = ({ active, apply }) => {
       link: Routes.contact,
     },
   ];
+
+
   return (
     <>
       <header

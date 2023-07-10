@@ -1,0 +1,4 @@
+export const MAILJET_API_KEY = process.env.REACT_APP_MAILJET_API_KEY;
+export const MAILJET_SECRET_KEY = process.env.REACT_APP_MAILJET_SECRET_KEY;
+export const SENDINBLUE_KEY = process.env.REACT_APP_SENDINBLUE_KEY
+export const SENDINBLUE_LIST_ID = process.env.REACT_APP_SENDINBLUE_LIST_ID
