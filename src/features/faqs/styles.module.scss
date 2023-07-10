@@ -116,3 +116,65 @@
     padding: 10px 16px;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .contact {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    padding-top: 9rem;
+
+    &__ttl {
+      font-size: 26px;
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+
+    &__txt {
+      font-size: 15px;
+      text-align: left;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+  }
+
+  .faqList {
+    max-width: unset;
+  }
+
+  .faqBtn {
+    font-size: 14px;
+    padding: 1.2rem 0;
+  }
+  .faqBody {
+    font-size: 14px;
+  }
+
+  .contact {
+    img {
+      margin-bottom: 1rem;
+    }
+
+    &__ttl {
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+
+    &__txt {
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    a {
+      font-size: 14px;
+      border-radius: 6px;
+    }
+  }
+  .containerBg {
+    padding-bottom: 4rem;
+  }
+}

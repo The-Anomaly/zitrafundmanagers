@@ -11,8 +11,11 @@ const HeroSection = () => {
           </h1>
           <p className={styles.txt}>
             Zitra Fund Managers Limited is a subsidiary of{" "}
-            <a>Zitra Investment Limited</a>, a licensed Nigerian-owned
-            technology-driven institution established in 2020.
+            <a href="https://zitrainvestments.com/" target="_blank">
+              Zitra Investment Limited
+            </a>
+            , a licensed Nigerian-owned technology-driven institution
+            established in 2020.
           </p>
           <p className={styles.txt}>
             Zitra is registered by the Securities and Exchange Commission as a
