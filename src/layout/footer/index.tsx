@@ -78,7 +78,6 @@ const Footer: React.FC<FooterProps> = ({ submit, clear }) => {
                 <input
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
-                  role="button"
                   type="email"
                   placeholder="Email address"
                 />
