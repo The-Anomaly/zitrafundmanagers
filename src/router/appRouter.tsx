@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { RouteBuilder } from ".";
-import { GetStartedForm } from "pages";
+import { BottomFeed, GetStartedForm } from "pages";
 
 /**
  * MAIN ROUTER COMPONENT
@@ -22,6 +22,7 @@ const MainRouter: React.FC = () => {
     <>
       <ScrollToTop />
       {search.includes("getstarted") && <GetStartedForm />}
+      <BottomFeed />
       <Routes>
         {RouteBuilder?.length > 0 &&
           RouteBuilder.map((item, idx) => {

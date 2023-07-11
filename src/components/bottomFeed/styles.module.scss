@@ -1,0 +1,32 @@
+.container {
+  background: #3cba67;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  width: 100vw;
+  font-size: 15px;
+  z-index: 1;
+}
+.content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: auto;
+
+  p {
+    margin-right: 1.5rem;
+    font-weight: 500;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    font-weight: 300;
+
+    svg {
+      margin-right: 4px;
+    }
+  }
+}

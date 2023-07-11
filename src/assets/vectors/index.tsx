@@ -9,8 +9,10 @@ import { ReactComponent as AboutArrow } from "./aboutArrow.svg";
 import { ReactComponent as PlusIcon } from "./plusIcon.svg";
 import { ReactComponent as MinusIcon } from "./minusIcon.svg";
 import { ReactComponent as CloseIcon } from "./closeIcon.svg";
+import { ReactComponent as GrowthArrow } from "./growthArrow.svg";
 
 export {
+  GrowthArrow,
   CloseIcon,
   PlusIcon,
   MinusIcon,

@@ -3,3 +3,4 @@ export * from "./about";
 export * from "./faqs";
 export * from "./contact";
 export * from "./getStartedForm";
+export * from "./bottomFeed"
