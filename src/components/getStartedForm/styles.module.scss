@@ -3,6 +3,8 @@
   position: fixed;
   z-index: 10;
   height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
 }
 
 .content {
@@ -14,6 +16,8 @@
   overflow: auto;
   height: 100%;
   padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
 
   &::-webkit-scrollbar {
     width: 0;
@@ -26,7 +30,7 @@
 .ttl {
   font-size: 30px;
   font-weight: 500;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.5rem;
 }
 .txt {
   color: rgba(27, 31, 39, 0.5);

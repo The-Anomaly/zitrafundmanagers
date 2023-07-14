@@ -4,15 +4,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: #fff;
-  align-items: center;
+  align-items: flex-start;
 }
 .img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  max-height: 750px;
 }
 .contact {
-  padding: 4rem 13%;
+  padding: 2rem 10%;
 }
 .ttl {
   font-size: 45px;

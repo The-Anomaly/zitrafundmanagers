@@ -24,8 +24,8 @@ const Post: React.FC<PostProps> = ({
       <p className={styles.post__ttl}>{title}</p>
       <p className={styles.post__txt}>{descrip}</p>
       <span className={styles.post__tag}>{duration} read</span>
-      <span className={styles.post__tag}>{date} ago</span>
-      <a href={link} className={styles.post__read}>
+      <span className={styles.post__tag}>{date}</span>
+      <a href={link} target="_blank" className={styles.post__read}>
         Read article
       </a>
     </div>
@@ -35,31 +35,29 @@ const Post: React.FC<PostProps> = ({
 const NewsFeed = () => {
   const posts: PostProps[] = [
     {
-      title: "How to make more with Zitra",
+      title: "Nigeria must support MSMEs",
       image: post1,
-      descrip: `Zitra Private Wealth is designed to help our clients build and manage
-            tailored investment portfolios to achieve set ...`,
-      duration: "8 mins",
-      date: "2 months",
-      link: "",
+      descrip: `Top financial expert, Tunde Obadero, is the Chief Executive Officer of Zitra Investments, a licensed lending institution that provides ...`,
+      duration: "4 mins",
+      date: "May 8, 2023",
+      link: "https://tribuneonlineng.com/nigeria-must-support-msmes-if-it-wants-to-survive-economic-meltdown-obadero/",
     },
     {
-      title: "100 Rules of finance",
+      title: "How to make more with Zitra",
       image: post2,
       descrip: `Zitra Private Wealth is designed to help our clients build and manage
               tailored investment portfolios to achieve set ...`,
-      duration: "4 mins",
-      date: "3 months",
-      link: "",
+      duration: "2 mins",
+      date: "9 months ago",
+      link: "https://app.nairacompare.ng/providers/zitra-investment",
     },
     {
-      title: "Money Maketh Man",
+      title: "Zitra celebrates 2 years",
       image: post3,
-      descrip: `Zitra Private Wealth is designed to help our clients build and manage
-              tailored investment portfolios to achieve set ...`,
-      duration: "2 mins",
-      date: "9 months",
-      link: "",
+      descrip: `Leading lending and investments company, Zitra Investments, is proud to celebrate two years of providing essential financial ...`,
+      duration: "8 mins",
+      date: "Oct 17, 2022",
+      link: "https://techcabal.com/2022/10/17/zitra-investments-celebrates-two-years-of-offering-financial-solutions-and-aiding-financial-freedom/",
     },
   ];
   return (
