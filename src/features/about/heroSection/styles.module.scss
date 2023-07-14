@@ -47,3 +47,58 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+@media screen and (max-width: 1200px) {
+  .hero {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: flex-end;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .hero {
+    grid-template-columns: 1fr;
+    background-image: url(../../../assets/vectors/aboutEllipse.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    padding-bottom: 4rem;
+  }
+  .content {
+    margin: 0;
+  }
+  .img {
+    display: none;
+  }
+  .ttl {
+    font-size: 52px;
+
+    svg {
+      width: 80px;
+    }
+  }
+  .txt {
+    max-width: unset;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hero {
+    padding-top: 6.5rem;
+  }
+  .ttl {
+    text-align: center;
+    max-width: unset;
+
+    font-size: 36px;
+
+    svg {
+      width: 60px;
+    }
+  }
+  .txt {
+    text-align: center;
+    font-size: 14px;
+  }
+}

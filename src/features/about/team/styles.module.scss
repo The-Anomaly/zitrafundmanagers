@@ -53,3 +53,45 @@
   font-size: 15px;
   line-height: 1.8;
 }
+
+@media screen and (max-width: 1200px) {
+  .members {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .team {
+    padding-top: 3rem;
+
+    &__ttl {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    &__txt {
+      margin-bottom: 1.5rem;
+
+    }
+  }
+  .members {
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .member {
+    padding: 1rem;
+  }
+  .name {
+    font-size: 18px;
+  }
+  .role {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .bio {
+    font-size: 13px;
+  }
+  .photo {
+    margin-bottom: 10px;
+  }
+}
