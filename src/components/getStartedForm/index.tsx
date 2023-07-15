@@ -68,11 +68,11 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
 
   useEffect(() => {
     reset();
-    // document.getElementsByTagName("html")[0].style.overflow = "hidden";
+    document.getElementsByTagName("html")[0].style.overflow = "hidden";
   }, [clear]);
 
   const close = () => {
-    // document.getElementsByTagName("html")[0].style.overflow = "unset";
+    document.getElementsByTagName("html")[0].style.overflow = "unset";
     searchParams.delete("getstarted");
     setSearchParams(searchParams);
   };
@@ -90,7 +90,7 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
     <>
       <aside className={styles.container}>
         <section className={styles.content}>
-          <div  className={styles.body}>
+          <div className={styles.body}>
             <CloseIcon onClick={close} role="button" className={styles.close} />
             <h1 className={styles.ttl}>Get started</h1>
             <p className={styles.txt}>
@@ -182,6 +182,7 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
               <div className={`${styles.inputWrap}`}>
                 <label>Location</label>
                 <Select
+                  menuPlacement="top"
                   onChange={(x: any) => setValue("location", x)}
                   className={`${styles.select}`}
                   classNamePrefix="formSelect"
@@ -200,6 +201,7 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
               <div className={`${styles.inputWrap}`}>
                 <label>Choose the kind of service you need</label>
                 <Select
+                  menuPlacement="top"
                   onChange={(x: any) => setValue("service", x)}
                   className={`${styles.select}`}
                   classNamePrefix="formSelect"
