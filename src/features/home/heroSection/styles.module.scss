@@ -72,7 +72,7 @@
       text-align: center;
       font-weight: 600;
       margin-bottom: 2rem;
-      
+
       span::after {
         width: 100px;
         height: 35px;
@@ -81,6 +81,9 @@
         bottom: -17px;
       }
     }
+  }
+  .hero {
+    padding-top: 10rem;
   }
 
   .txt {
