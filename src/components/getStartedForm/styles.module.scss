@@ -14,6 +14,8 @@
   min-width: 600px;
   overflow: auto;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 
   &::-webkit-scrollbar {
     width: 0;
@@ -23,8 +25,6 @@
   padding: 1.5rem;
   overflow: auto;
   padding-bottom: 0;
-  display: flex;
-  flex-direction: column;
 }
 .close {
   position: fixed;
