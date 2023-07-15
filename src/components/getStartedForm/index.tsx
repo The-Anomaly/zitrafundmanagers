@@ -68,11 +68,11 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
 
   useEffect(() => {
     reset();
-    document.getElementsByTagName("html")[0].style.overflow = "hidden";
+    // document.getElementsByTagName("html")[0].style.overflow = "hidden";
   }, [clear]);
 
   const close = () => {
-    document.getElementsByTagName("html")[0].style.overflow = "unset";
+    // document.getElementsByTagName("html")[0].style.overflow = "unset";
     searchParams.delete("getstarted");
     setSearchParams(searchParams);
   };
