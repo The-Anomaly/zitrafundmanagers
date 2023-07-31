@@ -40,7 +40,7 @@ const GetStartedForm = () => {
       },
       To: [
         {
-          Email: "favouradekogbe@gmail.com",
+          Email: "Info@zitrafundmanagers.com",
           Name: "Zitra Fund Managers",
         },
       ],
