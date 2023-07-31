@@ -1,4 +1,4 @@
-import { contactImg } from "assets";
+import { FacebookIcon, LinkedinIcon, TwitterIcon, contactImg } from "assets";
 import styles from "./styles.module.scss";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -76,9 +76,32 @@ const ContactUI: React.FC<ContactProps> = ({ submit, clear }) => {
             You can reach us anytime via{" "}
             <a href="mailto:info@zitrafundmanagers.com">
               info@zitrafundmanagers.com
-            </a>
+            </a><br />
+            or on our social handles
           </p>
-
+          <div className={styles.socials}>
+            <a
+              href="https://www.linkedin.com/company/zitra-investments/"
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              <LinkedinIcon />
+            </a>
+            <a
+              href="https://www.facebook.com/zitrainvestments"
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              <FacebookIcon />
+            </a>
+            <a
+              href="https://twitter.com/zitrainvestment?s=11&t=EljUfIs4lTDFZcbYOdhdLA"
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              <TwitterIcon />
+            </a>
+          </div>
           <form className={styles.form}>
             <div className={`${styles.inputWrap}`}>
               <label>Full name</label>

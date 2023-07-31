@@ -50,7 +50,6 @@ const Services: React.FC<ServicesProps> = ({ getStarted }) => {
     {
       title: "Private Wealth Accounts",
       list: [
-        "Money market.",
         "Fixed income.",
         "Equities.",
         "And other alternative investments.",
@@ -62,7 +61,6 @@ const Services: React.FC<ServicesProps> = ({ getStarted }) => {
           tailored investment portfolios to achieve set financial goals
           including generational wealth transfer. Our clients enjoy both
           financial planning and investment management services.
-          <br /> <br /> We invest in various asset classes including:
         </p>
       ),
     },

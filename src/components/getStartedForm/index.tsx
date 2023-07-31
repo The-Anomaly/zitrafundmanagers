@@ -5,7 +5,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import * as yup from "yup";
 import Select from "react-select";
 import countryCodes from "utils/countryCodes.json";
-import { CloseIcon } from "assets";
+import { CloseIcon, UploadIcon } from "assets";
 import { useSearchParams } from "react-router-dom";
 import { locationOptions, serviceOptions } from "utils/options";
 import { useEffect } from "react";
@@ -18,6 +18,7 @@ export interface GetStartedData {
   number: string;
   email: string;
   service: optionType;
+  file: FileList | null | any;
 }
 
 const initialValues: GetStartedData = {
@@ -28,7 +29,10 @@ const initialValues: GetStartedData = {
   email: "",
   service: { label: "", value: "" },
   location: { label: "", value: "" },
+  file: null,
 };
+
+const isFile = (value: any): value is File => value instanceof File;
 
 const schema = yup
   .object({
@@ -43,6 +47,14 @@ const schema = yup
       .min(8, "Enter a valid phone number")
       .matches(/^[0-9]+$/, "Phone number can only contain numbers"),
     service: optionTypeSchema,
+    file: yup
+      .mixed()
+      .nullable()
+      .test("fileSize", "File is too large", (value) =>
+        value === null
+          ? true
+          : value && isFile(value[0]) && value[0].size <= 1048576 * 5
+      ),
   })
   .required();
 
@@ -85,6 +97,8 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
   const onSubmit: SubmitHandler<GetStartedData> = (data) => {
     submit(data);
   };
+
+  const file = watch("file");
 
   return (
     <>
@@ -174,6 +188,27 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
                 {errors.number?.message ? (
                   <p className={styles.errorMessage}>
                     {errors.number?.message}
+                  </p>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className={`${styles.inputWrap}`}>
+                <label>Upload any file (Max. 5MB)</label>
+                <label className={styles.upload} htmlFor="file">
+                  {file ? file[0].name ?? "Upload" : "Upload"}
+                  <input
+                    id="file"
+                    style={{ display: "none" }}
+                    type="file"
+                    {...register("file")}
+                    accept=".png, .jpeg, .jpg, .pdf"
+                  />
+                  <UploadIcon />
+                </label>
+                {errors.file?.message ? (
+                  <p className={styles.errorMessage}>
+                    {errors.file?.message.toString()}
                   </p>
                 ) : (
                   ""

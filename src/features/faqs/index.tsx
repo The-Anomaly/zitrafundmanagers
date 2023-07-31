@@ -85,7 +85,7 @@ const FAQSUI = () => {
     {
       question: "What is the minimum investment amount required?",
       answer: `The minimum investment amount for our Zitra Income Portfolio product is
-        ₦100,000. With ₦1,000 you can invest in our mutual fund products.`,
+        ₦100,000. With ₦100,000 you can invest in our mutual fund products.`,
     },
     {
       question: "How do I open an account?",

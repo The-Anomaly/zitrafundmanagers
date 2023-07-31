@@ -22,7 +22,10 @@
     color: rgba(27, 31, 39, 0.5);
   }
 }
-
+.boardTtl {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
 .members {
   display: grid;
   gap: 1.5rem;
@@ -71,8 +74,11 @@
 
     &__txt {
       margin-bottom: 1.5rem;
-
     }
+  }
+  .boardTtl {
+    margin-bottom: 1.5rem;
+    margin-top: 4rem;
   }
   .members {
     gap: 1rem;

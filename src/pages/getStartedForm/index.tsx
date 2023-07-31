@@ -13,42 +13,72 @@ const GetStartedForm = () => {
     text: "",
   });
 
-  const sendEmail = (data: GetStartedData) => {
+  const getBase64 = (file: File) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        let encoded: any = reader.result
+          ?.toString()
+          .replace(/^data:(.*,)?/, "");
+        if (encoded.length % 4 > 0) {
+          encoded += "=".repeat(4 - (encoded.length % 4));
+        }
+        return resolve(encoded);
+      };
+      reader.onerror = (error) => reject(error);
+    });
+  };
+
+  const sendEmail = async (data: GetStartedData) => {
     setLoading(true);
-    axios
+
+    const message: any = {
+      From: {
+        Email: "zenna@zitrainvestments.com",
+        Name: "Zenna",
+      },
+      To: [
+        {
+          Email: "favouradekogbe@gmail.com",
+          Name: "Zitra Fund Managers",
+        },
+      ],
+      Subject:
+        "New Application Submission for Zitra Fund Managers - Get Started",
+      // TextPart: "My first Mailjet email",
+      HTMLPart: `<h3>Hello Zitra Admin,</h3>
+    <p style="font-size:14px">A new application request has been submitted on your website. The details are below:</p>
+    <ul style="font-size:14px">
+    <li>First name: <b>${data.firstName}</b></li>
+    <li>Last name: <b>${data.lastName}</b></li>
+    <li>Phone number: <b>${data.countryCode.value} ${data.number}</b></li>
+    <li>Email address: <b>${data.email}</b></li>
+    <li>Product or service: <b>${data.service.label}</b></li>
+    <li>Location: <b>${data.location.label}</b></li>
+    </ul>
+    Best regards.
+  `,
+      CustomID: "AppGettingStartedTest",
+      Attachments: [],
+    };
+
+    if (data.file) {
+      const base64 = await getBase64(data.file[0]).then((res) => {
+        return res;
+      });
+      message.Attachments.push({
+        ContentType: "text/plain",
+        Filename: data.file[0]?.name,
+        Base64Content: base64,
+      });
+    }
+
+    await axios
       .post(
         "https://anomaly-mailer.netlify.app/.netlify/functions/server/mailjet",
         {
-          messages: [
-            {
-              From: {
-                Email: "zenna@zitrainvestments.com",
-                Name: "Zenna",
-              },
-              To: [
-                {
-                  Email: "Info@zitrafundmanagers.com",
-                  Name: "Zitra Fund Managers",
-                },
-              ],
-              Subject:
-                "New Application Submission for Zitra Fund Managers - Get Started",
-              // TextPart: "My first Mailjet email",
-              HTMLPart: `<h3>Hello Zitra Admin,</h3>
-            <p style="font-size:14px">A new application request has been submitted on your website. The details are below:</p>
-            <ul style="font-size:14px">
-            <li>First name: <b>${data.firstName}</b></li>
-            <li>Last name: <b>${data.lastName}</b></li>
-            <li>Phone number: <b>${data.countryCode} ${data.number}</b></li>
-            <li>Email address: <b>${data.email}</b></li>
-            <li>Product or service: <b>${data.service}</b></li>
-            <li>Location: <b>${data.location}</b></li>
-            </ul>
-            Best regards.
-          `,
-              CustomID: "AppGettingStartedTest",
-            },
-          ],
+          messages: [message],
         },
         {
           headers: {

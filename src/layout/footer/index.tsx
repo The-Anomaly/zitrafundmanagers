@@ -68,7 +68,7 @@ const Footer: React.FC<FooterProps> = ({ submit, clear }) => {
                   </a>
                 </li>
                 <li className={`${styles.item} ${styles.address}`}>
-                  Address D59, Landbridge Avenue Oniru, Lekki Lagos.
+                  Address D59, Landbridge Avenue Oniru, Victoria Island, Lagos.
                 </li>
               </ul>
             </div>
@@ -87,7 +87,7 @@ const Footer: React.FC<FooterProps> = ({ submit, clear }) => {
                 />
               </div>
               <p className={styles.subscribe__txt}>
-                Hello, we are ABC. trying to make an effort to put the right
+                Hello, we are Zitra. trying to make an effort to put the right
                 people for you to get the best results. Just insight
               </p>
             </div>

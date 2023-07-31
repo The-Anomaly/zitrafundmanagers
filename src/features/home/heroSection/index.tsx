@@ -10,8 +10,8 @@ const HeroSection = ({ apply }) => {
           </h1>
           <p className={styles.txt}>
             We offer a wide range of investment products and services across
-            asset classes including equities, fixed-income portfolios, real
-            estate, commodities & others.
+            several asset classes including equity, fixed income, real estate,
+            and commodities.
           </p>
           <button onClick={apply} className={styles.btn}>
             Apply Now
