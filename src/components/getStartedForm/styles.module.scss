@@ -18,10 +18,10 @@
   flex-direction: column;
   right: -50%;
   position: relative;
-  animation: slideIn 3s ease-in-out 1 forwards;
+  animation: slideIn 1s ease-in-out 1 forwards;
 
   &__close {
-    animation: slideOut 3s ease-in-out 1 forwards;
+    animation: slideOut 1s ease-in-out 1 forwards;
   }
 }
 
