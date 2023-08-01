@@ -185,27 +185,6 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
                 )}
               </div>
               <div className={`${styles.inputWrap}`}>
-                <label>Upload any file (Max. 5MB)</label>
-                <label className={styles.upload} htmlFor="file">
-                  {file ? file[0].name ?? "Upload" : "Upload"}
-                  <input
-                    id="file"
-                    style={{ display: "none" }}
-                    type="file"
-                    {...register("file")}
-                    accept=".png, .jpeg, .jpg, .pdf"
-                  />
-                  <UploadIcon />
-                </label>
-                {errors.file?.message ? (
-                  <p className={styles.errorMessage}>
-                    {errors.file?.message.toString()}
-                  </p>
-                ) : (
-                  ""
-                )}
-              </div>
-              <div className={`${styles.inputWrap}`}>
                 <label>Location</label>
                 <Select
                   menuPlacement="top"
@@ -238,6 +217,27 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
                 {errors.service?.value?.message ? (
                   <p className={styles.errorMessage}>
                     {errors.service?.value?.message}
+                  </p>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className={`${styles.inputWrap}`}>
+                <label>Upload any file (Max. 5MB)</label>
+                <label className={styles.upload} htmlFor="file">
+                  {file ? file[0].name ?? "Upload" : "Upload"}
+                  <input
+                    id="file"
+                    style={{ display: "none" }}
+                    type="file"
+                    {...register("file")}
+                    accept=".png, .jpeg, .jpg, .pdf"
+                  />
+                  <UploadIcon />
+                </label>
+                {errors.file?.message ? (
+                  <p className={styles.errorMessage}>
+                    {errors.file?.message.toString()}
                   </p>
                 ) : (
                   ""
