@@ -81,7 +81,7 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
 
     setTimeout(() => {
       document.getElementsByTagName("html")[0].style.overflow = "hidden";
-    }, 1500);
+    }, 800);
   }, [clear]);
 
   const close = () => {
@@ -91,7 +91,7 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
 
     setTimeout(() => {
       setSearchParams(searchParams);
-    }, 3000);
+    }, 1000);
   };
 
   const cancel = () => {
