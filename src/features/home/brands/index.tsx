@@ -20,12 +20,12 @@ const Brands = () => {
         <div className={styles.brandList}>
           <img src={brand1} alt="paga" />
           <img src={brand2} alt="providus bank" />
-          <img src={brand3} alt="suntust" />
+          {/* <img src={brand3} alt="suntust" /> */}
           <img src={brand4} alt="appzone" />
           <img src={brand5} alt="remita" />
           <img src={brand6} alt="youverify" />
           <img src={brand7} alt="primepay" />
-          <img src={brand8} alt="onepipe" />
+          <img src={brand8} alt="ifitness" />
           <img src={brand9} alt="kredi" />
           <img src={brand10} alt="bidellus credit" />
         </div>

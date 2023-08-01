@@ -31,20 +31,9 @@ const Member: React.FC<MemberProps> = ({ photo, name, role, bio }) => {
 const Team = () => {
   const board: MemberProps[] = [
     {
-      photo: director3,
-      name: "Olaotan Olumuyiwa",
-      role: "Chairman",
-      bio: `Olaotan brings to play at the establishment his analytic and problem[1]solving skills aimed at developing, implementing, and improving relatable IT solutions that support business goals. He is an SAP Solution Architect with over 15 years of experience in Information Technology and eBusiness in the Nigerian Banking Sector. Olaotan Olamuyiwa is currently a Director and the Chief Information Officer at Zitra Investments. He holds a BSc in Computer Science (Technology) from Babcock University, Nigeria and a master’s degree in Electronic Business Management from the University of Warwick, United Kingdom.`,
-    },
-    {
-      photo: director5,
-      name: "Olu Raheem",
-
-      bio: `Is the Trade Commissioner for Finland in West Africa, specializing in market entry, business development, marketing, sales, and investment. With extensive experience in promoting trade relations, he works towards enhancing economic cooperation between Finland and countries in West Africa, including Nigeria and Ghana. Olu Raheem is also a private investor, focusing on real estate, tech, design, and art in the West African region. His educational background includes a Master's degree in Business Administration and Management, with a specialization in marketing, from the University of Jyväskylä`,
-    },
-    {
       photo: director6,
       name: "H.R.M Oba Abdulwasiu Omogbolahan Lawal (Abisogun II)",
+      role: "Chairman",
       bio: (
         <>
           is a highly experienced administrator with over 25 years in the
@@ -61,9 +50,34 @@ const Team = () => {
       ),
     },
     {
+      photo: director3,
+      name: "Olaotan Olumuyiwa",
+      bio: `Olaotan brings to play at the establishment his analytic and problem[1]solving skills aimed at developing, implementing, and improving relatable IT solutions that support business goals. He is an SAP Solution Architect with over 15 years of experience in Information Technology and eBusiness in the Nigerian Banking Sector. Olaotan Olamuyiwa is currently a Director and the Chief Information Officer at Zitra Investments. He holds a BSc in Computer Science (Technology) from Babcock University, Nigeria and a master’s degree in Electronic Business Management from the University of Warwick, United Kingdom.`,
+    },
+    {
+      photo: director8,
+      name: "Zumah Yahaya",
+      bio: (
+        <>
+          Is a seasoned growth and strategy specialist with 16 years of
+          experience. <br /> She is a Certified Management Consultant and a
+          Fellow of the Institute of Management Consultant. Zumah has a diverse
+          background in accounting, computer science, and business &
+          entrepreneurship. <br /> She has co-founded multiple organizations and
+          has served in management and advisory roles. Zumah is passionate about
+          optimizing business processes and maximizing profit while promoting
+          gender equality and mentoring young women in entrepreneurship.
+        </>
+      ),
+    },
+    {
+      photo: director5,
+      name: "Olu Raheem",
+      bio: `Is the Trade Commissioner for Finland in West Africa, specializing in market entry, business development, marketing, sales, and investment. With extensive experience in promoting trade relations, he works towards enhancing economic cooperation between Finland and countries in West Africa, including Nigeria and Ghana. Olu Raheem is also a private investor, focusing on real estate, tech, design, and art in the West African region. His educational background includes a Master's degree in Business Administration and Management, with a specialization in marketing, from the University of Jyväskylä`,
+    },
+    {
       photo: director7,
       name: "Seye Ayinla",
-
       bio: (
         <>
           is a purposeful attorney with expertise in intellectual property,
@@ -80,29 +94,13 @@ const Team = () => {
         </>
       ),
     },
-    {
-      photo: director8,
-      name: "Zumah Yahaya",
 
-      bio: (
-        <>
-          Is a seasoned growth and strategy specialist with 16 years of
-          experience. <br /> She is a Certified Management Consultant and a
-          Fellow of the Institute of Management Consultant. Zumah has a diverse
-          background in accounting, computer science, and business &
-          entrepreneurship. <br /> She has co-founded multiple organizations and
-          has served in management and advisory roles. Zumah is passionate about
-          optimizing business processes and maximizing profit while promoting
-          gender equality and mentoring young women in entrepreneurship.
-        </>
-      ),
-    },
   ];
 
   const members: MemberProps[] = [
     {
       photo: director1,
-      name: "Babatunde Obadero (MIOD)",
+      name: "Babatunde Obadero",
       role: "Director",
       bio: `Tunde has over 18 years experience in Strategy, Operations and Risk
             Management. Tunde has held previous roles as: Chief Executive Officer,
@@ -129,10 +127,9 @@ const Team = () => {
       <div className={`container ${styles.team}`}>
         <h2 className={styles.team__ttl}>Our Team</h2>
         <p className={styles.team__txt}>
-          The collective years of experience of over five decades of our
-          management team across finance, banking, and investment management
-          certifies our business capabilities and deep knowledge of the
-          financial industry and the regulatory environment.
+          The collective years of our management team across finance, banking,
+          and investment management certifies our business capabilities and deep
+          knowledge of the financial industry and the regulatory environment.
         </p>
         <div className={styles.members}>
           {members.map((member, index) => (
@@ -140,7 +137,9 @@ const Team = () => {
           ))}
         </div>
 
-        <h2 className={`${styles.team__ttl} ${styles.boardTtl}`}>Board of Directors</h2>
+        <h2 className={`${styles.team__ttl} ${styles.boardTtl}`}>
+          Board of Directors
+        </h2>
         <div className={styles.members}>
           {board.map((member, index) => (
             <Member {...member} key={index} />
