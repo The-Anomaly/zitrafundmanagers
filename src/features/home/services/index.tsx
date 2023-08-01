@@ -159,10 +159,10 @@ const Services: React.FC<ServicesProps> = ({ getStarted }) => {
     <>
       <section id="services" className={`container ${styles.services}`}>
         <h3 className={styles.services__ttl}>Our Products & Services</h3>
-        <p className={styles.services__txt}>
+        {/* <p className={styles.services__txt}>
           Zitra Private Wealth is designed to help our clients build and manage
           tailored investment portfolios
-        </p>
+        </p> */}
         <div>
           {serviceList.map((service, index) => (
             <Service getStarted={getStarted} {...service} key={index} />

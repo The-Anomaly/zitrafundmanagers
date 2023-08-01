@@ -87,8 +87,8 @@ const Footer: React.FC<FooterProps> = ({ submit, clear }) => {
                 />
               </div>
               <p className={styles.subscribe__txt}>
-                Hello, we are Zitra. trying to make an effort to put the right
-                people for you to get the best results. Just insight
+                Subscribe to our news letter to get up to date information on
+                new products and mouth watery rates on your investments.
               </p>
             </div>
           </div>

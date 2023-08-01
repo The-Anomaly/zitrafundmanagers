@@ -16,13 +16,38 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  right: -50%;
+  position: relative;
+  animation: slideIn 3s ease-in-out 1 forwards;
+
+  &__close {
+    animation: slideOut 3s ease-in-out 1 forwards;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    right: -700px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -700px;
+  }
 }
 .body {
   padding: 1.5rem;
   padding-bottom: 0;
 }
 .close {
-  position: fixed;
+  position: absolute;
   right: 1.5rem;
   background: #fff;
   border-radius: 50%;
@@ -191,6 +216,7 @@ label.upload {
   .content {
     width: 90%;
     min-width: unset;
+    right: -100%;
   }
   .body {
     padding: 1rem 1rem 0;
@@ -206,5 +232,22 @@ label.upload {
   }
   .close {
     right: 12px;
+  }
+  @keyframes slideIn {
+    0% {
+      right: -100%;
+    }
+    100% {
+      right: 0;
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      right: 0;
+    }
+    100% {
+      right: -100%;
+    }
   }
 }

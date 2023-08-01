@@ -7,7 +7,7 @@ const AboutUI = () => {
   return (
     <>
       <HeroSection />
-      <SocialProof />
+      {/* <SocialProof /> */}
       <Team />
     </>
   );

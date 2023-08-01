@@ -8,11 +8,10 @@ import countryCodes from "utils/countryCodes.json";
 import { CloseIcon, UploadIcon } from "assets";
 import { useSearchParams } from "react-router-dom";
 import { locationOptions, serviceOptions } from "utils/options";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export interface GetStartedData {
-  firstName: string;
-  lastName: string;
+  name: string;
   location: optionType;
   countryCode: optionType;
   number: string;
@@ -22,8 +21,7 @@ export interface GetStartedData {
 }
 
 const initialValues: GetStartedData = {
-  firstName: "",
-  lastName: "",
+  name: "",
   countryCode: { label: "+234", value: "+234" },
   number: "",
   email: "",
@@ -36,8 +34,7 @@ const isFile = (value: any): value is File => value instanceof File;
 
 const schema = yup
   .object({
-    firstName: yup.string().required("Required"),
-    lastName: yup.string().required("Required"),
+    name: yup.string().required("Required"),
     email: yup.string().email("Enter a valid email").required("Required"),
     countryCode: optionTypeSchema,
     location: optionTypeSchema,
@@ -65,6 +62,7 @@ interface GetStartedProps {
 
 const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [closeAnimation, setCloseAnimation] = useState(false);
 
   const {
     register,
@@ -80,13 +78,20 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
 
   useEffect(() => {
     reset();
-    document.getElementsByTagName("html")[0].style.overflow = "hidden";
+
+    setTimeout(() => {
+      document.getElementsByTagName("html")[0].style.overflow = "hidden";
+    }, 1500);
   }, [clear]);
 
   const close = () => {
+    setCloseAnimation(true);
     document.getElementsByTagName("html")[0].style.overflow = "unset";
     searchParams.delete("getstarted");
-    setSearchParams(searchParams);
+
+    setTimeout(() => {
+      setSearchParams(searchParams);
+    }, 3000);
   };
 
   const cancel = () => {
@@ -103,7 +108,11 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
   return (
     <>
       <aside className={styles.container}>
-        <section className={styles.content}>
+        <section
+          className={`${styles.content} ${
+            closeAnimation ? styles.content__close : ""
+          }`}
+        >
           <div className={styles.body}>
             <CloseIcon onClick={close} role="button" className={styles.close} />
             <h1 className={styles.ttl}>Get started</h1>
@@ -113,39 +122,21 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
             </p>
             <form className={styles.form}>
               <div className={`${styles.inputWrap}`}>
-                <label>First name</label>
+                <label>Full name</label>
                 <input
                   type={"text"}
-                  placeholder="your first name"
-                  {...register("firstName", {
+                  placeholder="your full name"
+                  {...register("name", {
                     required: true,
                   })}
                 />
-                {errors.firstName?.message ? (
-                  <p className={styles.errorMessage}>
-                    {errors.firstName?.message}
-                  </p>
+                {errors.name?.message ? (
+                  <p className={styles.errorMessage}>{errors.name?.message}</p>
                 ) : (
                   ""
                 )}
               </div>
-              <div className={`${styles.inputWrap}`}>
-                <label>Last name</label>
-                <input
-                  type={"text"}
-                  placeholder="your last name"
-                  {...register("lastName", {
-                    required: true,
-                  })}
-                />
-                {errors.lastName?.message ? (
-                  <p className={styles.errorMessage}>
-                    {errors.lastName?.message}
-                  </p>
-                ) : (
-                  ""
-                )}
-              </div>
+
               <div className={`${styles.inputWrap}`}>
                 <label>Email</label>
                 <input

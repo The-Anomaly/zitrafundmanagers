@@ -12,7 +12,7 @@ const HomeUI: React.FC<HomeProps> = ({ apply }) => {
   return (
     <>
       <HeroSection apply={apply} />
-      <SocialProof />
+      {/* <SocialProof /> */}
       <Brands />
       <Services getStarted={apply} />
       <NewsFeed />

@@ -50,8 +50,7 @@ const GetStartedForm = () => {
       HTMLPart: `<h3>Hello Zitra Admin,</h3>
     <p style="font-size:14px">A new application request has been submitted on your website. The details are below:</p>
     <ul style="font-size:14px">
-    <li>First name: <b>${data.firstName}</b></li>
-    <li>Last name: <b>${data.lastName}</b></li>
+    <li>Full name: <b>${data.name}</b></li>
     <li>Phone number: <b>${data.countryCode.value} ${data.number}</b></li>
     <li>Email address: <b>${data.email}</b></li>
     <li>Product or service: <b>${data.service.label}</b></li>
