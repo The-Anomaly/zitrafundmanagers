@@ -29,6 +29,28 @@ const Brands = () => {
           <img src={brand9} alt="kredi" />
           <img src={brand10} alt="bidellus credit" />
         </div>
+        <div className={styles.slider}>
+          <div className={styles.slideTrack}>
+            <img src={brand1} alt="paga" />
+            <img src={brand2} alt="providus bank" />
+            <img src={brand4} alt="appzone" />
+            <img src={brand5} alt="remita" />
+            <img src={brand6} alt="youverify" />
+            <img src={brand7} alt="primepay" />
+            <img src={brand8} alt="ifitness" />
+            <img src={brand9} alt="kredi" />
+            <img src={brand10} alt="bidellus credit" />
+            <img src={brand1} alt="paga" />
+            <img src={brand2} alt="providus bank" />
+            <img src={brand4} alt="appzone" />
+            <img src={brand5} alt="remita" />
+            <img src={brand6} alt="youverify" />
+            <img src={brand7} alt="primepay" />
+            <img src={brand8} alt="ifitness" />
+            <img src={brand9} alt="kredi" />
+            <img src={brand10} alt="bidellus credit" />
+          </div>
+        </div>
       </section>
     </>
   );

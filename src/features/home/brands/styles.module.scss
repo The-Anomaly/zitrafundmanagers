@@ -19,9 +19,53 @@
     }
   }
 }
+.slider {
+  display: none;
+}
 
 @media screen and (max-width: 800px) {
   .brands {
-    display: none;
+    flex-wrap: nowrap;
+    overflow: auto;
+    padding-bottom: 1.5rem;
+    padding-top: 3rem;
+
+    &__ttl {
+      font-size: 26px;
+      margin-bottom: 2rem;
+    }
+
+    .brandList {
+      display: none;
+    }
+  }
+  .slideTrack * {
+    transition: 0.3s;
+  }
+  .slider {
+    display: block;
+    background: transparent;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    opacity: 0.5;
+  }
+  .slideTrack {
+    animation: scroll 20s linear infinite;
+    display: flex;
+    width: 1435px;
+    align-items: center;
+  }
+  .slideTrack img {
+    width: fit-content;
+    padding-right: 3rem;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-1435px);
+    }
   }
 }
