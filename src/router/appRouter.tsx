@@ -22,7 +22,7 @@ const MainRouter: React.FC = () => {
     <>
       <ScrollToTop />
       {search.includes("getstarted") && <GetStartedForm />}
-      <BottomFeed />
+      {/* <BottomFeed /> */}
       <Routes>
         {RouteBuilder?.length > 0 &&
           RouteBuilder.map((item, idx) => {
