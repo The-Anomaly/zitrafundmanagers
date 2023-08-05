@@ -5,6 +5,7 @@
   height: 100vh;
   // max-height: 100vh;
   width: 100vw;
+  -webkit-overflow-scrolling: touch;
 }
 
 .content {
@@ -19,7 +20,8 @@
   right: -50%;
   position: relative;
   animation: slideIn 1s ease-in-out 1 forwards;
-  padding-bottom: 1.3rem;
+  position: relative;
+  -webkit-transform: translateZ(0);
 
   &__close {
     animation: slideOut 1s ease-in-out 1 forwards;
@@ -46,7 +48,6 @@
 .body {
   padding: 1.5rem;
   padding-bottom: 0;
-  padding-top: 1rem;
 }
 .close {
   position: absolute;
@@ -58,18 +59,18 @@
 .ttl {
   font-size: 30px;
   font-weight: 500;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 .txt {
   color: rgba(27, 31, 39, 0.5);
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.5rem;
 }
 .form {
   width: 60%;
   min-width: 350px;
 }
 .inputWrap {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 
   label {
     display: block;
