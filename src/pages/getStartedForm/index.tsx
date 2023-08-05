@@ -53,6 +53,7 @@ const GetStartedForm = () => {
     <li>Full name: <b>${data.name}</b></li>
     <li>Phone number: <b>${data.countryCode.value} ${data.number}</b></li>
     <li>Email address: <b>${data.email}</b></li>
+    <li>BVN: <b>${data.bvn}</b></li>
     <li>Product or service: <b>${data.service.label}</b></li>
     <li>Location: <b>${data.location.label}</b></li>
     </ul>

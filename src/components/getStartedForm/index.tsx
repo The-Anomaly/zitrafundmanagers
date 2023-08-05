@@ -16,6 +16,7 @@ export interface GetStartedData {
   countryCode: optionType;
   number: string;
   email: string;
+  bvn: string;
   service: optionType;
   file: FileList | null | any;
 }
@@ -25,6 +26,7 @@ const initialValues: GetStartedData = {
   countryCode: { label: "+234", value: "+234" },
   number: "",
   email: "",
+  bvn: "",
   service: { label: "", value: "" },
   location: { label: "", value: "" },
   file: null,
@@ -35,6 +37,7 @@ const isFile = (value: any): value is File => value instanceof File;
 const schema = yup
   .object({
     name: yup.string().required("Required"),
+    bvn: yup.string().required("Required").matches(/[0-9]/, "Only digits are allowed"),
     email: yup.string().email("Enter a valid email").required("Required"),
     countryCode: optionTypeSchema,
     location: optionTypeSchema,
@@ -223,9 +226,24 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
                 )}
               </div>
               <div className={`${styles.inputWrap}`}>
-                <label>Upload any file (Max. 5MB)</label>
+                <label>Bank Verification Number (BVN)</label>
+                <input
+                  type={"number"}
+                  placeholder="Enter BVN"
+                  {...register("bvn", {
+                    required: true,
+                  })}
+                />
+                {errors.bvn?.message ? (
+                  <p className={styles.errorMessage}>{errors.bvn?.message}</p>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className={`${styles.inputWrap}`}>
+                <label>Upload government approved ID (Max. 5MB)</label>
                 <label className={styles.upload} htmlFor="file">
-                  {file ? file[0].name ?? "Upload" : "Upload"}
+                  {file ? file[0].name ?? "Upload ID card" : "Upload ID card"}
                   <input
                     id="file"
                     style={{ display: "none" }}
@@ -235,6 +253,7 @@ const GetStartedFormUI: React.FC<GetStartedProps> = ({ submit, clear }) => {
                   />
                   <UploadIcon />
                 </label>
+                <p className={styles.msg} >.pdf .doc .jpeg .png files accepted</p>
                 {errors.file?.message ? (
                   <p className={styles.errorMessage}>
                     {errors.file?.message.toString()}

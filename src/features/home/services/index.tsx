@@ -66,13 +66,13 @@ const Services: React.FC<ServicesProps> = ({ getStarted }) => {
     },
     {
       title: "Fixed Income Notes",
-      list: ["Money market instrument.", "Fixed income securities."],
+      list: ["Money market instruments.", "Fixed income securities."],
       image: stock2,
       text1: (
         <p className={styles.service__txt}>
-          Zitra Fixed Income Notes gives retail investors with as little as
-          N100,000.00 access to high-yield and professionally managed
-          investments. The fund invests in identified asset classes including:
+          Zitra Fixed Income Notes gives retail investors access to high-yield
+          and professionally managed investments. The fund invests in identified
+          asset classes including:
         </p>
       ),
       text2: (
@@ -88,7 +88,7 @@ const Services: React.FC<ServicesProps> = ({ getStarted }) => {
       list: [
         "Suitable for investors with disciplined savings.",
         "For investing large sum of money regularly.",
-        "Funds are regulated by the Security & Exchange Commission.",
+        "Funds are professionally managed.",
       ],
       image: stock3,
       text1: (
@@ -107,32 +107,30 @@ const Services: React.FC<ServicesProps> = ({ getStarted }) => {
     {
       title: "Foreign Currency Investments",
       list: [
-        "Keep your assets in dollars.",
+        "Keep your assets in Dollars.",
         "Earn attractive returns.",
-        "We offer additional liquidity as coupons.",
+        "Offers additional liquidity as coupons.",
         "Assets can be withdrawn semi-annually or re-invested.",
       ],
       image: stock4,
       text1: (
         <p className={styles.service__txt}>
-          Foreign currency investments products are designed for clients who
-          seek to keep assets in Dollars while earning attractive returns.
+          Foreign currency investment products are designed for clients who seek
+          to keep assets in Dollars while earning attractive returns.
         </p>
       ),
     },
     {
-      title: "Zitra Alternative Investments",
+      title: "Zitra Alternative Investments (ZAI)",
       list: [
-        "Designed for investors with Ultra High Net worth.",
         "Has investment appraisal system that analyze transactions.",
-        "Gives offers to investors at competitive returns.",
+        "Offers competitive returns.",
         "Investors receive bullet repayment of principal and interest.",
-        "Pre-liquidation is not allowed.",
       ],
       image: stock5,
       text1: (
         <p className={styles.service__txt}>
-          The ZAP (N) is an Alternative Investment product that seeks to
+          The ZAI (N) is an Alternative Investment product that seeks to
           generate superior returns relative to traditional fixed-income
           investment by investing in structured assets including
           commodity-backed notes, foreign currency (FCY) linked notes, credit,
@@ -142,7 +140,7 @@ const Services: React.FC<ServicesProps> = ({ getStarted }) => {
     },
     {
       title: "Ethical Investments",
-      list: ["Money market instrument.", "Fixed income securities."],
+      list: ["Sharia-Compliant Equities.", "Sukuk Bonds."],
       image: stock6,
       text1: (
         <p className={styles.service__txt}>
