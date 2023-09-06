@@ -23,7 +23,7 @@ const Member: React.FC<MemberProps> = ({ photo, name, role, bio }) => {
       <img className={styles.photo} src={photo} alt="" />
       <p className={styles.name}>{name}</p>
       {role && <p className={styles.role}>{role}</p>}
-      <p className={styles.bio}>{bio}</p>
+      {/* <p className={styles.bio}>{bio}</p> */}
     </div>
   );
 };
@@ -33,7 +33,7 @@ const Team = () => {
     {
       photo: director6,
       name: "H.R.M Oba Abdulwasiu Omogbolahan Lawal (Abisogun II)",
-      role: "Chairman",
+      role: "Chairman of the Board",
       bio: (
         <>
           is a highly experienced administrator with over 25 years in the
@@ -52,7 +52,7 @@ const Team = () => {
     {
       photo: director1,
       name: "Babatunde Obadero",
-      role: "Director",
+      role: "Managing Director/CEO",
       bio: `Tunde has over 18 years experience in Strategy, Operations and Risk
             Management. Tunde has held previous roles as: Chief Executive Officer,
             CS Advance (a subsidiary of Cardinal Stone Partners), Chief Commercial
@@ -63,8 +63,14 @@ const Team = () => {
     {
       photo: director2,
       name: "Femi Okuyelu (MIOD)",
-      role: "Director",
+      role: "Executive Director",
       bio: `Femi has 15 years experience in Fintech, Business development, marketing, and Strategic partnership. Femi has held roles as; Country Manager, Ferratum NG, Commercial Advisor, Embassy of Finland in Nigeria, Senior Market Analyst, Business Finland, Business Development Lead, Skye Bank Plc. Femi Holds a BSc and an MBA from the university of Lagos.`,
+    },
+    {
+      photo: director3,
+      name: "Olaotan Olumuyiwa",
+      role: "Executive Director",
+      bio: `Olaotan brings to play at the establishment his analytic and problem[1]solving skills aimed at developing, implementing, and improving relatable IT solutions that support business goals. He is an SAP Solution Architect with over 15 years of experience in Information Technology and eBusiness in the Nigerian Banking Sector. Olaotan Olamuyiwa is currently a Director and the Chief Information Officer at Zitra Investments. He holds a BSc in Computer Science (Technology) from Babcock University, Nigeria and a master’s degree in Electronic Business Management from the University of Warwick, United Kingdom.`,
     },
     {
       photo: director4,
@@ -75,6 +81,7 @@ const Team = () => {
     {
       photo: director8,
       name: "Zumah Yahaya",
+      role: "Non- executive Director",
       bio: (
         <>
           Is a seasoned growth and strategy specialist with 16 years of
@@ -89,19 +96,15 @@ const Team = () => {
       ),
     },
     {
-      photo: director3,
-      name: "Olaotan Olumuyiwa",
-      bio: `Olaotan brings to play at the establishment his analytic and problem[1]solving skills aimed at developing, implementing, and improving relatable IT solutions that support business goals. He is an SAP Solution Architect with over 15 years of experience in Information Technology and eBusiness in the Nigerian Banking Sector. Olaotan Olamuyiwa is currently a Director and the Chief Information Officer at Zitra Investments. He holds a BSc in Computer Science (Technology) from Babcock University, Nigeria and a master’s degree in Electronic Business Management from the University of Warwick, United Kingdom.`,
-    },
-
-    {
       photo: director5,
       name: "Olu Raheem",
+      role: "Non- executive Director",
       bio: `Is the Trade Commissioner for Finland in West Africa, specializing in market entry, business development, marketing, sales, and investment. With extensive experience in promoting trade relations, he works towards enhancing economic cooperation between Finland and countries in West Africa, including Nigeria and Ghana. Olu Raheem is also a private investor, focusing on real estate, tech, design, and art in the West African region. His educational background includes a Master's degree in Business Administration and Management, with a specialization in marketing, from the University of Jyväskylä`,
     },
     {
       photo: director7,
       name: "Seye Ayinla",
+      role: "Non- executive Director",
       bio: (
         <>
           is a purposeful attorney with expertise in intellectual property,
