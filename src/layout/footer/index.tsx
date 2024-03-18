@@ -61,7 +61,7 @@ const Footer: React.FC<FooterProps> = ({ submit, clear }) => {
             <div>
               <p className={styles.ttl}>Contact</p>
               <ul>
-                <li className={styles.item}>017002801</li>
+                <li className={styles.item}>02017002801</li>
                 <li className={styles.item}>
                   <a href="mailto:info@zitrafundmanagers.com">
                     info@zitrafundmanagers.com
