@@ -1,5 +1,6 @@
 import {
   director1,
+  director10,
   director2,
   director3,
   director4,
@@ -7,6 +8,7 @@ import {
   director6,
   director7,
   director8,
+  director9,
 } from "assets";
 import styles from "./styles.module.scss";
 
@@ -50,9 +52,15 @@ const Team = () => {
       ),
     },
     {
+      photo: director9,
+      name: "Olufemi Akinrotimi",
+      role: "Managing Director",
+      bio: ""
+    },
+    {
       photo: director1,
       name: "Babatunde Obadero",
-      role: "Managing Director/CEO",
+      role: "Executive Director",
       bio: `Tunde has over 18 years experience in Strategy, Operations and Risk
             Management. Tunde has held previous roles as: Chief Executive Officer,
             CS Advance (a subsidiary of Cardinal Stone Partners), Chief Commercial
@@ -73,10 +81,10 @@ const Team = () => {
       bio: `Olaotan brings to play at the establishment his analytic and problem[1]solving skills aimed at developing, implementing, and improving relatable IT solutions that support business goals. He is an SAP Solution Architect with over 15 years of experience in Information Technology and eBusiness in the Nigerian Banking Sector. Olaotan Olamuyiwa is currently a Director and the Chief Information Officer at Zitra Investments. He holds a BSc in Computer Science (Technology) from Babcock University, Nigeria and a master’s degree in Electronic Business Management from the University of Warwick, United Kingdom.`,
     },
     {
-      photo: director4,
-      name: "Bolaji Fajenyo",
-      role: "Chief Commercial Officer",
-      bio: `Bolaji is an experienced relationship manager with over 13 years of experience. He joined Afrinvest in 2009 and handles sales and service interactions with customers. He introduced Treasury Bills investments to retail investors in his previous role. Bolaji has a background in sales and holds a degree in Geography. He has attended courses on anti-money laundering, terrorism finance, SEC rules, and relationship management. He is sponsored by the SEC.`,
+      photo: director10,
+      name: "Grace Akogwu",
+      role: "Wealth Manager",
+      bio: ""
     },
     {
       photo: director8,
@@ -95,6 +103,12 @@ const Team = () => {
         </>
       ),
     },
+    // {
+    //   photo: director4,
+    //   name: "Bolaji Fajenyo",
+    //   role: "Chief Commercial Officer",
+    //   bio: `Bolaji is an experienced relationship manager with over 13 years of experience. He joined Afrinvest in 2009 and handles sales and service interactions with customers. He introduced Treasury Bills investments to retail investors in his previous role. Bolaji has a background in sales and holds a degree in Geography. He has attended courses on anti-money laundering, terrorism finance, SEC rules, and relationship management. He is sponsored by the SEC.`,
+    // },
     {
       photo: director5,
       name: "Olu Raheem",

@@ -28,10 +28,14 @@ import director5 from "./director5.png";
 import director6 from "./director6.png";
 import director7 from "./director7.png";
 import director8 from "./director8.png";
+import director9 from "./director9.png";
+import director10 from "./director10.png";
 import avatarGroup from "./avatarGroup.png";
 import contactImg from "./contactImg.png";
 
 export {
+  director10,
+  director9,
   avatarGroup,
   contactImg,
   director1,

@@ -68,7 +68,7 @@ const Footer: React.FC<FooterProps> = ({ submit, clear }) => {
                   </a>
                 </li>
                 <li className={`${styles.item} ${styles.address}`}>
-                  Address D59, Landbridge Avenue Oniru, Victoria Island, Lagos.
+                  Address <b>Plot 267 Asebe street Mabushi District Casdastral Zone BO6,Abuja </b>
                 </li>
               </ul>
             </div>
