@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import { MinusIcon, PlusIcon, avatarGroup } from "assets";
 import { Routes } from "router";
 import { Link } from "react-router-dom";
+import { GetInTouch } from "components";
 
 interface FAQITemProps extends FAQListProp {
   active: number;
@@ -144,15 +145,7 @@ const FAQSUI = () => {
             ))}
           </div>
         </section>
-        <section className={`container ${styles.contact}`}>
-            <img src={avatarGroup} alt="" />
-          <h2 className={styles.contact__ttl}>Still have questions?</h2>
-          <p className={styles.contact__txt}>
-            Can’t find the answer you’re looking for? Please chat to our
-            friendly team.
-          </p>
-          <Link to={Routes.contact} >Get in touch</Link>
-        </section>
+        <GetInTouch />
       </section>
     </>
   );

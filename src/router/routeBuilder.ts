@@ -2,6 +2,7 @@ import { Layout } from "layout";
 import { About, Contact, FAQS, Home } from "pages";
 import { PathRouteProps } from "react-router-dom";
 import { Routes } from "./routes";
+import { PrivacyPolicy } from "pages/privacyPolicy";
 
 // Route Builder Item Props
 export interface RouteBuilderItem extends PathRouteProps {
@@ -55,5 +56,10 @@ export const RouteBuilder: RouteBuilderItem[] = [
     props: {
       active: "contact",
     },
+  },
+  {
+    path: Routes.privacy_policy,
+    Layout: Layout,
+    Element: PrivacyPolicy,
   },
 ];

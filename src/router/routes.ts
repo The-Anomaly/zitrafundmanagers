@@ -13,4 +13,5 @@ export const Routes = {
   about: "/about",
   faqs: "/faqs",
   contact: "/contact",
+  privacy_policy: "/privacy-policy"
 };

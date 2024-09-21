@@ -45,6 +45,9 @@ const Footer: React.FC<FooterProps> = ({ submit, clear }) => {
                 <Link className={styles.item} to={Routes.faqs}>
                   FAQs
                 </Link>
+                <Link className={styles.item} to={Routes.privacy_policy}>
+                  Privacy Policy
+                </Link>
               </div>
             </div>
             <div>
@@ -68,7 +71,7 @@ const Footer: React.FC<FooterProps> = ({ submit, clear }) => {
                   </a>
                 </li>
                 <li className={`${styles.item} ${styles.address}`}>
-                  Address <b>Plot 267 Asebe street Mabushi District Casdastral Zone BO6,Abuja </b>
+                  Address: Plot 267 Asebe street Mabushi District Casdastral Zone BO6,Abuja
                 </li>
               </ul>
             </div>
