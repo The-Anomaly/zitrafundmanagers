@@ -1,4 +1,4 @@
-import { post1, post2, post3 } from "assets";
+import { abujaLaunch, post1, post2, post3 } from "assets";
 import styles from "./styles.module.scss";
 
 interface PostProps {
@@ -8,6 +8,7 @@ interface PostProps {
   link: string;
   date: string;
   duration: string;
+  ctaText: string;
 }
 
 const Post: React.FC<PostProps> = ({
@@ -17,6 +18,7 @@ const Post: React.FC<PostProps> = ({
   duration,
   link,
   image,
+  ctaText,
 }) => {
   return (
     <div className={styles.post}>
@@ -26,7 +28,7 @@ const Post: React.FC<PostProps> = ({
       <span className={styles.post__tag}>{duration} read</span>
       <span className={styles.post__tag}>{date}</span>
       <a href={link} target="_blank" className={styles.post__read}>
-        Read article
+        {ctaText}
       </a>
     </div>
   );
@@ -35,29 +37,32 @@ const Post: React.FC<PostProps> = ({
 const NewsFeed = () => {
   const posts: PostProps[] = [
     {
-      title: "Nigeria must support MSMEs",
+      title: "Solutions for Smoother Business Growth",
       image: post1,
-      descrip: `Top financial expert, Tunde Obadero, is the Chief Executive Officer of Zitra Investments, a licensed lending institution that provides ...`,
+      descrip: `Zitra understands the challenges small businesses face. One of the biggest hurdles can be cash flow. You deliver your product...`,
       duration: "4 mins",
-      date: "May 8, 2023",
-      link: "https://tribuneonlineng.com/nigeria-must-support-msmes-if-it-wants-to-survive-economic-meltdown-obadero/",
+      date: "March 18, 2024",
+      link: "https://businessday.ng/sponsored/article/stuck-waiting-on-payments-zitra-offers-solutions-for-smoother-business-growth/",
+      ctaText: "Read article",
     },
     {
-      title: "How to make more with Zitra",
+      title: "Investing for Nigerians",
       image: post2,
-      descrip: `Zitra Private Wealth is designed to help our clients build and manage
-              tailored investment portfolios to achieve set ...`,
+      descrip: `The hustle is real in Nigeria. We work hard, we dream big, and we deserve a future that reflects that effort. But let’s face it...`,
       duration: "2 mins",
-      date: "9 months ago",
-      link: "https://app.nairacompare.ng/providers/zitra-investment",
+
+      date: "March 18, 2024",
+      link: "https://businessday.ng/sponsored/article/investing-for-nigerians-your-guide-to-a-brighter-tomorrow/",
+      ctaText: "Read article",
     },
     {
-      title: "Zitra celebrates 2 years",
-      image: post3,
-      descrip: `Leading lending and investments company, Zitra Investments, is proud to celebrate two years of providing essential financial ...`,
-      duration: "8 mins",
+      title: "Zitra Abuja Office Launch",
+      image: abujaLaunch,
+      descrip: `Zitra launched her office in Abuja and we were thrilled to see so many familiar faces enjoying the various activities...`,
+      duration: "10 mins",
       date: "Oct 17, 2022",
-      link: "https://techcabal.com/2022/10/17/zitra-investments-celebrates-two-years-of-offering-financial-solutions-and-aiding-financial-freedom/",
+      link: "https://www.youtube.com/watch?v=zoVNtITHo54",
+      ctaText: "Watch",
     },
   ];
   return (

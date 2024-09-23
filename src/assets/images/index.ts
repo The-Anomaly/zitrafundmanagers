@@ -32,8 +32,10 @@ import director9 from "./director9.png";
 import director10 from "./director10.png";
 import avatarGroup from "./avatarGroup.png";
 import contactImg from "./contactImg.png";
+import abujaLaunch from "./abujaLaunch.jpg";
 
 export {
+  abujaLaunch,
   director10,
   director9,
   avatarGroup,
